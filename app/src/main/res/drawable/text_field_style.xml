@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item>
+        <shape android:shape="rectangle">
+            <corners android:bottomLeftRadius="10dip"
+                android:bottomRightRadius="10dip"
+                android:topLeftRadius="10dip"
+                android:topRightRadius="10dip" />
+
+            <gradient android:startColor="@color/btnConnect"/>
+            <gradient android:endColor="@color/purple_700"/>
+
+            <stroke android:width="0dip" android:color="#000000" />
+        </shape>
+
+    </item>
+</selector>
