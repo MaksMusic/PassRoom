@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.pass.databinding.PassItemBinding
 import com.example.pass.room.model.PassItem
 
-class AdapterPass (var listPass:ArrayList<PassItem>): RecyclerView.Adapter<AdapterPass.ViewHolder>() {
+class AdapterPass (private var listPass:ArrayList<PassItem>,private var listener: OnClicListener): RecyclerView.Adapter<AdapterPass.ViewHolder>() {
 
 
     fun addItem(passItem: PassItem){
@@ -16,6 +16,9 @@ class AdapterPass (var listPass:ArrayList<PassItem>): RecyclerView.Adapter<Adapt
     inner class ViewHolder (var bindingItem:PassItemBinding): RecyclerView.ViewHolder(bindingItem.root){
         fun add(passItem: PassItem){
             bindingItem.textItemName.text = passItem.name
+            itemView.setOnClickListener(){
+                listener.clic(passItem.name)
+            }
         }
     }
 
@@ -30,6 +33,10 @@ class AdapterPass (var listPass:ArrayList<PassItem>): RecyclerView.Adapter<Adapt
 
     override fun getItemCount(): Int {
       return  listPass.size
+    }
+
+    interface OnClicListener{
+        fun clic(name:String)
     }
 }
 

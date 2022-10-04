@@ -1,7 +1,9 @@
 package com.example.pass
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
 import com.example.pass.Adpter.AdapterPass
 import com.example.pass.App.App
@@ -12,7 +14,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class ActivityPassMenu : AppCompatActivity() {
+class ActivityPassMenu : AppCompatActivity(),AdapterPass.OnClicListener{
     lateinit var binding: ActivityPassMenuBinding
     var listPassRoom = ArrayList<PassItem>()
     lateinit var adapterPass: AdapterPass
@@ -32,7 +34,7 @@ class ActivityPassMenu : AppCompatActivity() {
             var list = passDao.getPassItemList() as ArrayList
             listPassRoom.addAll(list)
             withContext(Dispatchers.Main){
-                adapterPass = AdapterPass(listPassRoom)
+                adapterPass = AdapterPass(listPassRoom,this@ActivityPassMenu)
                 binding.recycler.adapter = adapterPass
             }
         }
@@ -52,5 +54,9 @@ class ActivityPassMenu : AppCompatActivity() {
             adapterPass.addItem(PassItem(0,"qw","2","ww","ew"))
 
         }
+    }
+
+    override fun clic(name:String) {
+        Toast.makeText(application,name,Toast.LENGTH_LONG).show()
     }
 }
