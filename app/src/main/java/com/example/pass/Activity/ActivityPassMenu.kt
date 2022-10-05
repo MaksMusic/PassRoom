@@ -29,21 +29,16 @@ class ActivityPassMenu : AppCompatActivity(),AdapterPass.OnClicListener{
 
 
         //room add list adapter
-        lifecycleScope.launch(Dispatchers.IO){
-            passDao.insertPassItem(PassItem(0,"Login","Name","12345","Email",))
+        lifecycleScope.launch(Dispatchers.IO) {
+            passDao.insertPassItem(PassItem(0, "Login", "Name", "12345", "Email",))
             var list = passDao.getPassItemList() as ArrayList
             listPassRoom.addAll(list)
-            withContext(Dispatchers.Main){
-                adapterPass = AdapterPass(listPassRoom,this@ActivityPassMenu)
+            withContext(Dispatchers.Main) {
+                adapterPass = AdapterPass(listPassRoom, this@ActivityPassMenu)
                 binding.recycler.adapter = adapterPass
             }
         }
-
-
         addPass()
-
-
-
 
     }
 
