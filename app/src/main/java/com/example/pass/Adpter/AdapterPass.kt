@@ -17,7 +17,7 @@ class AdapterPass (private var listPass:ArrayList<PassItem>,private var listener
         fun add(passItem: PassItem){
             bindingItem.textItemName.text = passItem.name
             itemView.setOnClickListener(){
-                listener.clic(passItem.name)
+                listener.clic((passItem.id).toLong())
             }
         }
     }
@@ -36,7 +36,7 @@ class AdapterPass (private var listPass:ArrayList<PassItem>,private var listener
     }
 
     interface OnClicListener{
-        fun clic(name:String)
+        fun clic(id:Long)
     }
 }
 

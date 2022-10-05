@@ -1,4 +1,4 @@
-package com.example.pass
+package com.example.pass.Activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() {
     fun connect(){
         binding.btnConnect.setOnClickListener(){
             if (binding.textfield.editText?.text.toString().equals(prefManager.getString("passwordReg"))){
-                var intent = Intent(applicationContext,ActivityPassMenu::class.java)
+                var intent = Intent(applicationContext, ActivityPassMenu::class.java)
                 startActivity(intent)
             }else{
                 val toast = Toast.makeText(applicationContext, "Не верный пароль", Toast.LENGTH_LONG)

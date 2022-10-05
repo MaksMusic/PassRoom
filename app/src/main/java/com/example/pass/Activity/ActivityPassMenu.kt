@@ -1,4 +1,4 @@
-package com.example.pass
+package com.example.pass.Activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -56,7 +56,12 @@ class ActivityPassMenu : AppCompatActivity(),AdapterPass.OnClicListener{
         }
     }
 
-    override fun clic(name:String) {
-        Toast.makeText(application,name,Toast.LENGTH_LONG).show()
+    override fun clic(id:Long) {
+        lifecycleScope.launch(Dispatchers.IO){
+            val intent = Intent(this@ActivityPassMenu,PassItemInfo::class.java)
+            intent.putExtra("id",id)
+            startActivity(intent)
+
+        }
     }
 }

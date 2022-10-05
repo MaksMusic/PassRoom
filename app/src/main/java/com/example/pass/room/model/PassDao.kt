@@ -12,4 +12,8 @@ interface PassDao {
 
     @Query("SELECT * FROM passItem")
     suspend fun getPassItemList() : List<PassItem>
+
+
+    @Query ("SELECT* FROM passItem WHERE id = :id")
+    suspend fun getPassItem(id:Long):PassItem
 }
