@@ -6,6 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
         <androidx.appcompat.widget.AppCompatTextView
+            android:background="@color/item"
             android:id="@+id/textItemName"
             android:layout_marginTop="5dp"
             android:layout_marginEnd="5dp"

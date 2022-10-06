@@ -10,6 +10,7 @@ data class PassItem (
     @ColumnInfo(name = "login") val login:String,
     @ColumnInfo(name = "name") val name:String,
     @ColumnInfo(name = "password") val password:String,
-    @ColumnInfo(name = "email") val email:String
+    @ColumnInfo(name = "email") val email:String,
+    @ColumnInfo(name = "notes") val notes:String,
         ){
 }

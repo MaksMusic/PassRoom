@@ -11,5 +11,6 @@
     <color name="btnConnect">#F71AA120</color>
     <color name="edittext">#00FFFFFF</color>
     <color name="add">#00BCD4</color>d
-    <color name="infoItemName">#EDE9C8</color>d
+    <color name="infoItemName">#EDE9C8</color>
+    <color name="item">#1DFFEB3B</color>
 </resources>

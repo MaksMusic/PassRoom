@@ -27,10 +27,26 @@ class ActivityPassMenu : AppCompatActivity(),AdapterPass.OnClicListener{
         setContentView(binding.root)
         passDao = (application as App).getDataBase().passDao()
 
+        initList()
+        addPass()
 
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+
+        lifecycleScope.launch(Dispatchers.IO) {
+            var list = passDao.getPassItemList() as ArrayList
+            listPassRoom = list
+            withContext(Dispatchers.Main) {
+                adapterPass = AdapterPass(listPassRoom, this@ActivityPassMenu)
+                binding.recycler.adapter = adapterPass
+            }
+        }
+    }
+    fun initList(){
         //room add list adapter
         lifecycleScope.launch(Dispatchers.IO) {
-            passDao.insertPassItem(PassItem(0, "Login", "Name", "12345", "Email",))
             var list = passDao.getPassItemList() as ArrayList
             listPassRoom.addAll(list)
             withContext(Dispatchers.Main) {
@@ -38,16 +54,14 @@ class ActivityPassMenu : AppCompatActivity(),AdapterPass.OnClicListener{
                 binding.recycler.adapter = adapterPass
             }
         }
-        addPass()
-
     }
 
 
 
     fun addPass(){
         binding.BtnFab.setOnClickListener(){
-            adapterPass.addItem(PassItem(0,"qw","2","ww","ew"))
-
+            val intent = Intent(this@ActivityPassMenu,ActivityAddItem::class.java)
+            startActivity(intent)
         }
     }
 
