@@ -51,25 +51,35 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/textFieldConnect"
+            android:drawableStart="@drawable/ic_lock"
+            android:clickable="true"
+            android:inputType="textPassword"
+            android:linksClickable="false"
+            android:longClickable="false"
+            android:drawablePadding="12dp"
+            android:textColor="@color/black"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/edittext"
+            android:background="@drawable/castom_input_textfield_style"
             android:hint="Пароль"
-            android:textSize="24sp" />
-
+            android:textSize="18sp" />
     </com.google.android.material.textfield.TextInputLayout>
-
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnConnect"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+        android:textStyle="italic"
         android:backgroundTint="@color/btnConnect"
         android:text="Войти"
+        android:textSize="15dp"
         android:textColor="@color/white"
        android:layout_gravity="center"
         app:layout_constraintTop_toBottomOf="@+id/textfield" />
+
+
+
 
 </LinearLayout>
 
@@ -100,14 +110,19 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:drawableStart="@drawable/ic_lock"
                 android:id="@+id/textReg"
+                android:clickable="true"
+                android:linksClickable="false"
+                android:longClickable="false"
+                android:drawablePadding="12dp"
+                android:textColor="@color/black"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/edittext"
+                android:background="@drawable/castom_input_textfield_style"
                 android:hint="придумайте пароль"
                 android:inputType="textPassword"
                 android:textSize="18sp" />
-
         </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -118,11 +133,15 @@
             android:layout_marginTop="10dp"
             android:backgroundTint="@color/btnConnect"
             android:text="регистрация"
-            android:textSize="18sp"
+            android:textStyle="italic"
+            android:textSize="15sp"
             android:textColor="@color/white"
             android:layout_gravity="center"
             app:layout_constraintTop_toBottomOf="@+id/textfield" />
 
     </LinearLayout>
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

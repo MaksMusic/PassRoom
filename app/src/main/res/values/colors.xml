@@ -12,5 +12,6 @@
     <color name="edittext">#00FFFFFF</color>
     <color name="add">#00BCD4</color>d
     <color name="infoItemName">#EDE9C8</color>
-    <color name="item">#1DFFEB3B</color>
+    <color name="item">#4FF4D403</color>
+    <color name="green">#3E9F42</color>
 </resources>

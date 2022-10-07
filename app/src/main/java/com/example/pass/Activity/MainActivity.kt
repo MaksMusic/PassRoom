@@ -3,6 +3,7 @@ package com.example.pass.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Gravity
 import android.view.View
 import android.widget.Toast
 import com.example.pass.PrefManager.PrefManager
@@ -19,8 +20,6 @@ class MainActivity : AppCompatActivity() {
         initInterface()
         reg()
         connect()
-
-
 
     }
 
@@ -40,7 +39,9 @@ class MainActivity : AppCompatActivity() {
                 var intent = Intent(applicationContext, ActivityPassMenu::class.java)
                 startActivity(intent)
             }else{
-                val toast = Toast.makeText(applicationContext, "Не верный пароль", Toast.LENGTH_LONG)
+                binding.textfield.editText?.imeOptions = 2
+                val toast = Toast.makeText(applicationContext, "Не верный пароль", Toast.LENGTH_SHORT)
+                toast.setGravity(0,0,Gravity.BOTTOM)
                 toast.show()
             }
 
