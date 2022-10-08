@@ -12,7 +12,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 class ActivityAddItem : AppCompatActivity() {
-    lateinit var binding:com.example.pass.databinding.ActivityAddItemBinding
+    lateinit var binding: com.example.pass.databinding.ActivityAddItemBinding
     lateinit var passDao: PassDao
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,30 +21,35 @@ class ActivityAddItem : AppCompatActivity() {
         setContentView(binding.root)
         passDao = (application as App).getDataBase().passDao()
         addPassBtn()
-
+        exit()
 
 
     }
 
-    fun addPassBtn(){
-        binding.btnAdd.setOnClickListener(){
-            val name:String = binding.textNameItem.text.toString() ?: ""
-            val login:String = binding.textLoginItem.text.toString() ?: ""
-            val pass:String = binding.textPassItem.text.toString() ?: ""
-            val email:String = binding.textEmailItem.text.toString() ?: ""
-            val notes:String = binding.textNotesItem.text.toString() ?: ""
+    fun exit() {
+        binding.exit.setOnClickListener() {
+            finish()
+        }
+    }
 
-            val item = PassItem(0,login,name,pass,email,notes)
-            lifecycleScope.launch (Dispatchers.IO){
+    fun addPassBtn() {
+        binding.btnAdd.setOnClickListener() {
+            val name: String = binding.textNameItem.text.toString() ?: ""
+            val login: String = binding.textLoginItem.text.toString() ?: ""
+            val pass: String = binding.textPassItem.text.toString() ?: ""
+            val email: String = binding.textEmailItem.text.toString() ?: ""
+            val notes: String = binding.textNotesItem.text.toString() ?: ""
+
+            val item = PassItem(0, login, name, pass, email, notes)
+            lifecycleScope.launch(Dispatchers.IO) {
                 passDao.insertPassItem(item)
-                withContext(Dispatchers.Main){
+                withContext(Dispatchers.Main) {
                     finish()
                 }
 
             }
         }
     }
-
 
 
 }

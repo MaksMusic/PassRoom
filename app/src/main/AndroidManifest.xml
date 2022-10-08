@@ -11,6 +11,7 @@
         android:label="@string/app_name"
         android:roundIcon="@drawable/ico"
         android:supportsRtl="true"
+        android:screenOrientation="portrait"
         android:theme="@style/Theme.Pass"
         tools:targetApi="31">
         <activity

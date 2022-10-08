@@ -51,7 +51,7 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/textFieldConnect"
-            android:drawableStart="@drawable/ic_lock"
+            android:drawableStart="@drawable/custom_lock_ico"
             android:clickable="true"
             android:inputType="textPassword"
             android:linksClickable="false"
@@ -110,7 +110,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:drawableStart="@drawable/ic_lock"
+                android:drawableStart="@drawable/custom_lock_ico"
                 android:id="@+id/textReg"
                 android:clickable="true"
                 android:linksClickable="false"
