@@ -52,7 +52,7 @@
         app:layout_constraintTop_toBottomOf="@+id/LLReg" />
 
     <LinearLayout
-    android:visibility="gone"
+    android:visibility="visible"
     android:id="@+id/LL1"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -66,10 +66,13 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textfield"
+        app:errorEnabled="true"
+        app:errorIconDrawable="@color/design_default_color_error"
+        app:endIconMode="password_toggle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="35dp"
-        android:layout_marginEnd="35dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
         app:counterEnabled="true"
         app:counterMaxLength="16"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -79,8 +82,8 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/textFieldConnect"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
             android:drawableStart="@drawable/custom_lock_ico"
-            android:clickable="true"
             android:inputType="textPassword"
             android:linksClickable="false"
             android:longClickable="false"
@@ -107,9 +110,8 @@
         app:layout_constraintTop_toBottomOf="@+id/textfield" />
 
 
+    </LinearLayout>
 
-
-</LinearLayout>
 
     <LinearLayout
         android:visibility="visible"
@@ -126,23 +128,20 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textfieldReg"
+            app:errorEnabled="true"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="35dp"
-            android:layout_marginEnd="35dp"
+            app:endIconMode="password_toggle"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            app:errorIconDrawable="@color/design_default_color_error"
             app:counterEnabled="true"
-            app:counterMaxLength="16"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:counterMaxLength="16">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:drawableStart="@drawable/custom_lock_ico"
                 android:id="@+id/textReg"
-                android:clickable="true"
-                android:linksClickable="false"
-                android:longClickable="false"
                 android:drawablePadding="12dp"
                 android:textColor="@color/black"
                 android:layout_width="match_parent"

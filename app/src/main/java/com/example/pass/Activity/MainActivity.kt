@@ -6,11 +6,14 @@ import android.os.Bundle
 import android.view.Gravity
 import android.view.View
 import android.widget.Toast
+import androidx.core.view.doOnLayout
+import androidx.core.view.doOnNextLayout
+import androidx.core.widget.doOnTextChanged
 import com.example.pass.PrefManager.PrefManager
 import com.example.pass.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-    lateinit var binding:ActivityMainBinding
+    lateinit var binding: ActivityMainBinding
     lateinit var prefManager: PrefManager
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,8 +23,33 @@ class MainActivity : AppCompatActivity() {
         initInterface()
         reg()
         connect()
+        passRegError()
+        passConnectError()
 
     }
+
+
+    fun  passConnectError(){
+        binding.textFieldConnect.doOnTextChanged { text, start, before, count ->
+            if(text!!.length > 16){
+                binding.textfield.error = "слишком длинный пароль"
+            }else if(text!!.length < 16){
+                binding.textfieldReg.error = null
+            }
+        }
+    }
+
+
+    fun passRegError(){
+        binding.textReg.doOnTextChanged { text, start, before, count ->
+            if(text!!.length > 16){
+                binding.textfieldReg.error = "слишком длинный парроль"
+            }else if(text!!.length < 16){
+                binding.textfieldReg.error = null
+            }
+        }
+    }
+
 
     fun reg(){
         binding.btnConnectReg.setOnClickListener(){
