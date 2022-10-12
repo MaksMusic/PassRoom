@@ -23,13 +23,13 @@ class MainActivity : AppCompatActivity() {
         initInterface()
         reg()
         connect()
-        passRegError()
-        passConnectError()
+        passRegErrorXml()
+        passConnectErrorXml()
 
     }
 
 
-    fun  passConnectError(){
+    fun  passConnectErrorXml(){
         binding.textFieldConnect.doOnTextChanged { text, start, before, count ->
             if(text!!.length > 16){
                 binding.textfield.error = "слишком длинный пароль"
@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    fun passRegError(){
+    fun passRegErrorXml(){
         binding.textReg.doOnTextChanged { text, start, before, count ->
             if(text!!.length > 16){
                 binding.textfieldReg.error = "слишком длинный парроль"
@@ -53,11 +53,13 @@ class MainActivity : AppCompatActivity() {
 
     fun reg(){
         binding.btnConnectReg.setOnClickListener(){
-            prefManager.putString("passwordReg",binding.textfieldReg.editText?.text.toString())
-            val toast = Toast.makeText(applicationContext, "Пароль установлен", Toast.LENGTH_LONG)
-            toast.show()
-            initInterface()
-
+            if (binding.textfieldReg.editText?.text.toString().length <= 16 && binding.textfieldReg.editText?.text.toString() != "null") {
+                prefManager.putString("passwordReg", binding.textfieldReg.editText?.text.toString())
+                val toast =
+                    Toast.makeText(applicationContext, "Пароль установлен", Toast.LENGTH_LONG)
+                toast.show()
+                initInterface()
+            }
         }
     }
 
