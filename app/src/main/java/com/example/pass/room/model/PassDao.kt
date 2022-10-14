@@ -1,6 +1,7 @@
 package com.example.pass.room.model
 
 import androidx.room.Dao
+import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
 import androidx.room.Update
@@ -19,6 +20,9 @@ interface PassDao {
 
     @Update
     suspend fun update(passItem: PassItem)
+
+    @Delete
+    suspend fun deleteItem(passItem: PassItem)
 
 
 }

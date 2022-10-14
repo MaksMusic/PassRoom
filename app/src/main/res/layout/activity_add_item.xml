@@ -36,9 +36,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="2dp"
-        android:layout_marginTop="10dp"
+
         android:layout_marginEnd="2dp"
-        android:background="@color/infoItemName"
+        android:background="@drawable/ll_style"
         android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar">
@@ -71,7 +71,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="2dp"
-        android:layout_marginTop="2dp"
+        android:layout_marginTop="5dp"
         android:layout_marginEnd="2dp"
         android:background="@color/infoItemName"
         android:orientation="horizontal"
@@ -107,9 +107,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="2dp"
-        android:layout_marginTop="2dp"
+        android:layout_marginTop="5dp"
         android:layout_marginEnd="2dp"
-        android:background="@color/infoItemName"
+        android:background="@drawable/ll_style"
         android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/LL2">
@@ -142,9 +142,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="2dp"
-        android:layout_marginTop="2dp"
+        android:layout_marginTop="5dp"
         android:layout_marginEnd="2dp"
-        android:background="@color/infoItemName"
+        android:background="@drawable/ll_style"
         android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/LL3">
@@ -193,7 +193,7 @@
         android:layout_marginStart="2dp"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="2dp"
-        android:background="@color/infoItemName"
+        android:background="@drawable/ll_style"
         android:orientation="vertical"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textNotes">
