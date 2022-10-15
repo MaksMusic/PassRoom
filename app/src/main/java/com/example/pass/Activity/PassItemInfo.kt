@@ -30,6 +30,10 @@ class PassItemInfo : AppCompatActivity() {
         setContentView(binding.root)
         passDao = (application as App).getDataBase().passDao()
         id = intent.extras?.getLong("id")
+        binding.toolbar.title=""
+        setSupportActionBar(binding.toolbar)
+
+
 
         initText()
         btnExit()

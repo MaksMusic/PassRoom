@@ -3,13 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.music.compose.MainActivity">
-
-
     <item
+        android:color="@android:color/white"
         android:id="@+id/setting"
         android:title="1"
         app:showAsAction="never"/>
     <item
+        android:color="@android:color/darker_gray"
         android:id="@+id/delete"
         android:title="удалить пароль"
         app:showAsAction="never"/>
