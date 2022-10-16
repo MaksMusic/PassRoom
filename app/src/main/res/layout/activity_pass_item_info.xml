@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@color/fonAddzItem"
     android:layout_height="match_parent"
     tools:context=".Activity.PassItemInfo">
 
@@ -37,7 +38,7 @@
 
 
     <LinearLayout
-        android:layout_marginTop="0dp"
+        android:layout_marginTop="5dp"
         android:layout_marginStart="2dp"
         android:layout_marginEnd="2dp"
         android:background="@drawable/ll_style"
@@ -62,14 +63,11 @@
 
         <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/textNameItem"
-
             android:maxLines="1"
             android:ellipsize="end"
             android:layout_marginStart="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:clickable="false"
-            android:longClickable="false"
             />
 
     </LinearLayout>
@@ -105,9 +103,7 @@
             android:layout_marginStart="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:clickable="false"
 
-            android:longClickable="false"
             />
 
     </LinearLayout>
@@ -144,9 +140,7 @@
             android:maxLines="1"
             android:ellipsize="end"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:clickable="false"
-            android:longClickable="false" />
+            android:layout_height="wrap_content" />
 
     </LinearLayout>
 
@@ -179,7 +173,6 @@
             android:layout_marginStart="10dp"
             android:layout_width="match_parent"
             android:maxLines="1"
-            android:clickable="false"
             android:ellipsize="end"
             android:layout_height="wrap_content"/>
 
@@ -195,6 +188,7 @@
         app:layout_constraintTop_toBottomOf="@+id/LL4"
         android:layout_marginTop="30dp"
         android:id="@+id/textNotes"
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
@@ -209,7 +203,8 @@
         app:layout_constraintTop_toBottomOf="@+id/textNotes"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_width="match_parent"
-        android:layout_height="150dp">
+        android:minHeight="150dp"
+        android:layout_height="wrap_content">
 
 
         <androidx.appcompat.widget.AppCompatEditText
@@ -218,9 +213,7 @@
             android:maxLines="3"
             android:ellipsize="end"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:clickable="false"
-            android:longClickable="false" />
+            android:layout_height="wrap_content" />
 
     </LinearLayout>
 

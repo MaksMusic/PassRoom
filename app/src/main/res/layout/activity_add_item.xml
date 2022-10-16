@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@color/fonAddzItem"
     android:layout_height="match_parent"
     tools:context=".Activity.ActivityAddItem">
 
@@ -36,7 +37,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="2dp"
-
+        android:layout_marginTop="5dp"
         android:layout_marginEnd="2dp"
         android:background="@drawable/ll_style"
         android:orientation="horizontal"
@@ -189,7 +190,8 @@
     <LinearLayout
         android:id="@+id/LL5"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:minHeight="150dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="2dp"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="2dp"

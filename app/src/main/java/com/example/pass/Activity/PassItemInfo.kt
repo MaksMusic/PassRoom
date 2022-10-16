@@ -38,13 +38,28 @@ class PassItemInfo : AppCompatActivity() {
         initText()
         btnExit()
         btnSave()
+        onClicEditText()
+        onClicEditTextEmail()
 
-binding.textNameItem.isClickable = false
 
-
-
+        }
+    fun onClicEditText(){
+        binding.textNameItem.setOnClickListener() {
+            binding.textNameItem.isClickable = false
+            binding.textNameItem.isLongClickable = true;
+        }
 
     }
+
+    fun onClicEditTextEmail(){
+        binding.textEmailItem.setOnClickListener() {
+            binding.textEmailItem.setOnClickListener() {
+                binding.textEmailItem.isClickable = false
+                binding.textEmailItem.isLongClickable = true;
+            }
+        }
+    }
+
 
     private fun itemDelete(){
         lifecycleScope.launch(Dispatchers.IO){
