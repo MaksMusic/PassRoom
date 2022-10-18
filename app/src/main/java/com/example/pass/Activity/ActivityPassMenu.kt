@@ -3,14 +3,18 @@ package com.example.pass.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
 import com.example.pass.Adpter.AdapterPass
 import com.example.pass.App.App
+import com.example.pass.R
 import com.example.pass.databinding.ActivityPassMenuBinding
 import com.example.pass.room.model.PassDao
 import com.example.pass.room.model.PassItem
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
@@ -30,6 +34,18 @@ class ActivityPassMenu : AppCompatActivity(),AdapterPass.OnClicListener{
         initList()
         addPass()
 
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+       return when(item.itemId){
+            R.id.delete -> {true}
+           else -> true
+       }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_recycler,menu)
+        return true
     }
 
     override fun onRestart() {
