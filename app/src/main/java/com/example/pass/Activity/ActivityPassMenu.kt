@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
 import com.example.pass.Adpter.AdapterPass
 import com.example.pass.App.App
@@ -14,7 +13,6 @@ import com.example.pass.databinding.ActivityPassMenuBinding
 import com.example.pass.room.model.PassDao
 import com.example.pass.room.model.PassItem
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
@@ -30,7 +28,8 @@ class ActivityPassMenu : AppCompatActivity(),AdapterPass.OnClicListener{
         binding = ActivityPassMenuBinding.inflate(layoutInflater)
         setContentView(binding.root)
         passDao = (application as App).getDataBase().passDao()
-
+        binding.toolbar.title = ""
+        setSupportActionBar(binding.toolbar)
         initList()
         addPass()
 
@@ -38,9 +37,20 @@ class ActivityPassMenu : AppCompatActivity(),AdapterPass.OnClicListener{
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
        return when(item.itemId){
-            R.id.delete -> {true}
+            R.id.deleteList-> {
+                deliteList()
+                true
+            }
            else -> true
        }
+    }
+
+
+    fun deliteList(){
+        lifecycleScope.launch(Dispatchers.IO){
+            passDao.clearPassItem()
+        }
+        adapterPass.clearList()
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -83,7 +93,7 @@ class ActivityPassMenu : AppCompatActivity(),AdapterPass.OnClicListener{
 
     override fun clic(id:Long) {
         lifecycleScope.launch(Dispatchers.IO){
-            val intent = Intent(this@ActivityPassMenu,PassItemInfo::class.java)
+            val intent = Intent(this@ActivityPassMenu,PassItemInfoActivity::class.java)
             intent.putExtra("id",id)
             startActivity(intent)
 

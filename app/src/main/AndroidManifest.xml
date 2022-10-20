@@ -22,7 +22,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".Activity.PassItemInfo"
+            android:name=".Activity.PassItemInfoActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

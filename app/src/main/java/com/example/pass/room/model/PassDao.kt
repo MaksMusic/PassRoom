@@ -24,5 +24,8 @@ interface PassDao {
     @Delete
     suspend fun deleteItem(passItem: PassItem)
 
+    @Query ("DELETE FROM passItem")
+    suspend fun clearPassItem()
+
 
 }

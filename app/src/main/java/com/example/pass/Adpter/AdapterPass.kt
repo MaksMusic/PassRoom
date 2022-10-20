@@ -13,6 +13,13 @@ class AdapterPass (private var listPass:ArrayList<PassItem>,private var listener
         listPass.add(passItem)
       notifyDataSetChanged()
     }
+
+    fun clearList(){
+        listPass.clear()
+        notifyDataSetChanged()
+    }
+
+
     inner class ViewHolder (var bindingItem:PassItemBinding): RecyclerView.ViewHolder(bindingItem.root){
         fun add(passItem: PassItem){
             bindingItem.textItemName.text = passItem.name

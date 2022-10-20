@@ -2,15 +2,16 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.music.compose.MainActivity">
+    tools:context="com.music.example.pass.ActivityPassMenu">
     <item
         android:color="@android:color/white"
         android:id="@+id/setting"
-        android:title="сортировка по "
+        android:title="сменить пароль"
         app:showAsAction="never"/>
     <item
         android:color="@android:color/darker_gray"
-        android:id="@+id/delete"
-        android:title="сорировка"
+        android:id="@+id/deleteList"
+        android:title="удалить все"
+        android:icon="@drawable/images"
         app:showAsAction="never"/>
 </menu>

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:background="@color/fonAddzItem"
     android:layout_height="match_parent"
-    tools:context=".Activity.PassItemInfo">
+    tools:context=".Activity.PassItemInfoActivity">
 
 
     <androidx.appcompat.widget.Toolbar

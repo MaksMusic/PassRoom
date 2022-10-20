@@ -8,6 +8,7 @@
 
     <androidx.appcompat.widget.Toolbar
         app:menu="@menu/menu_recycler"
+        style="@style/Widget.MaterialComponents.Toolbar.Primary"
         android:id="@+id/toolbar"
         android:background="@color/black"
         app:layout_constraintTop_toTopOf="parent"
@@ -22,6 +23,39 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
     </androidx.appcompat.widget.Toolbar>
+
+    <LinearLayout
+        android:id="@+id/LL1Delite"
+        android:background="@color/black"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="wrap_content"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Введите пароль"
+            android:textSize="25sp"
+            android:textColor="@color/red"/>
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:minEms="16"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Удалить все"
+            android:layout_gravity="center"/>
+
+
+    </LinearLayout>
 
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton

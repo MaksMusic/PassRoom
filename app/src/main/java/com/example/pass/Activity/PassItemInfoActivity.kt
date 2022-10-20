@@ -1,25 +1,21 @@
 package com.example.pass.Activity
 
-import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import androidx.annotation.RequiresApi
 import androidx.lifecycle.lifecycleScope
 import com.example.pass.App.App
 import com.example.pass.R
 import com.example.pass.databinding.ActivityPassItemInfoBinding
-import com.example.pass.databinding.PassItemBinding
 import com.example.pass.room.model.PassDao
 import com.example.pass.room.model.PassItem
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import kotlin.time.Duration.Companion.seconds
 
 
-class PassItemInfo : AppCompatActivity() {
+class PassItemInfoActivity : AppCompatActivity() {
     private lateinit var binding: ActivityPassItemInfoBinding
     private var id: Long? = null
     lateinit var passDao: PassDao
