@@ -5,9 +5,12 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
+import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
 import com.example.pass.Adpter.AdapterPass
 import com.example.pass.App.App
+import com.example.pass.PrefManager.PrefManager
 import com.example.pass.R
 import com.example.pass.databinding.ActivityPassMenuBinding
 import com.example.pass.room.model.PassDao
@@ -20,6 +23,7 @@ class ActivityPassMenu : AppCompatActivity(),AdapterPass.OnClicListener{
     lateinit var binding: ActivityPassMenuBinding
     var listPassRoom = ArrayList<PassItem>()
     lateinit var adapterPass: AdapterPass
+    lateinit var prefManager: PrefManager
 
     lateinit var passDao: PassDao
 
@@ -30,6 +34,7 @@ class ActivityPassMenu : AppCompatActivity(),AdapterPass.OnClicListener{
         passDao = (application as App).getDataBase().passDao()
         binding.toolbar.title = ""
         setSupportActionBar(binding.toolbar)
+        prefManager = PrefManager(this)
         initList()
         addPass()
 
@@ -47,10 +52,27 @@ class ActivityPassMenu : AppCompatActivity(),AdapterPass.OnClicListener{
 
 
     fun deliteList(){
-        lifecycleScope.launch(Dispatchers.IO){
-            passDao.clearPassItem()
+        binding.recycler.visibility = View.GONE
+        binding.LL1Delite.visibility = View.VISIBLE
+        binding.delete.setOnClickListener(){
+            if (binding.textFielPass.text.toString() == prefManager.getString("passwordReg").toString() ){
+                lifecycleScope.launch(Dispatchers.IO){
+                    passDao.clearPassItem()
+                }
+                adapterPass.clearList()
+                binding.textFielPass.setText("")
+                binding.recycler.visibility = View.VISIBLE
+                binding.LL1Delite.visibility = View.GONE
+                Toast.makeText(applicationContext,"Пароли удаленны",Toast.LENGTH_LONG).show()
+            }
+
         }
-        adapterPass.clearList()
+        binding.close.setOnClickListener(){
+            binding.recycler.visibility = View.VISIBLE
+            binding.LL1Delite.visibility = View.GONE
+            binding.textFielPass.setText("")
+        }
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

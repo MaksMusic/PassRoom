@@ -25,6 +25,7 @@
     </androidx.appcompat.widget.Toolbar>
 
     <LinearLayout
+        android:visibility="visible"
         android:id="@+id/LL1Delite"
         android:background="@color/black"
         app:layout_constraintTop_toTopOf="parent"
@@ -36,23 +37,72 @@
         android:layout_height="wrap_content">
 
         <androidx.appcompat.widget.AppCompatTextView
+            android:gravity="center"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Введите пароль"
-            android:textSize="25sp"
+            android:minEms="15"
+            android:text="удалить все пароли"
+            android:textSize="20sp"
             android:textColor="@color/red"/>
 
-        <androidx.appcompat.widget.AppCompatEditText
-            android:minEms="16"
-            android:textColor="@color/white"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:layout_width="wrap_content"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textfield"
+            app:errorEnabled="true"
+            app:errorIconDrawable="@color/design_default_color_error"
+            app:endIconMode="password_toggle"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Удалить все"
-            android:layout_gravity="center"/>
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            app:counterEnabled="true"
+            app:counterMaxLength="16">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textFielPass"
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                android:drawableStart="@drawable/custom_lock_ico"
+                android:inputType="textPassword"
+                android:minEms="16"
+                android:drawablePadding="12dp"
+                android:textColor="@color/black"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/castom_input_textfield_style"
+                android:hint="Пароль"
+                android:textSize="18sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+<LinearLayout
+    android:weightSum="1"
+    android:id="@+id/LLbtn"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/close"
+        android:layout_weight="0.5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/black"
+        android:textColor="@color/white"
+        android:text="отмена"
+        android:layout_gravity="center"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/delete"
+        android:layout_weight="0.5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/black"
+        android:textColor="@color/white"
+        android:text="Удалить все"
+        android:layout_gravity="center"/>
+
+
+</LinearLayout>
 
 
     </LinearLayout>

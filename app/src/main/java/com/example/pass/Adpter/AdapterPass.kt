@@ -36,6 +36,7 @@ class AdapterPass (private var listPass:ArrayList<PassItem>,private var listener
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
        holder.add(listPass[position])
+       
     }
 
     override fun getItemCount(): Int {
