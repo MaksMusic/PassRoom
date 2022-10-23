@@ -5,7 +5,7 @@
     tools:context="com.music.example.pass.ActivityPassMenu">
     <item
         android:color="@android:color/white"
-        android:id="@+id/setting"
+        android:id="@+id/setPass"
         android:title="сменить пароль"
         app:showAsAction="never"/>
     <item

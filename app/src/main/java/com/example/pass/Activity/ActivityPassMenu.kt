@@ -46,6 +46,9 @@ class ActivityPassMenu : AppCompatActivity(),AdapterPass.OnClicListener{
                 deliteList()
                 true
             }
+           R.id.setPass -> {
+               true
+           }
            else -> true
        }
     }
