@@ -13,6 +13,7 @@ import com.example.pass.App.App
 import com.example.pass.PrefManager.PrefManager
 import com.example.pass.R
 import com.example.pass.databinding.ActivityPassMenuBinding
+import com.example.pass.room.model.CategoryDao
 import com.example.pass.room.model.PassDao
 import com.example.pass.room.model.PassItem
 import kotlinx.coroutines.Dispatchers
@@ -22,6 +23,8 @@ import kotlinx.coroutines.withContext
 class ActivityPassMenu : AppCompatActivity(),AdapterPass.OnClicListener{
     lateinit var binding: ActivityPassMenuBinding
     var listPassRoom = ArrayList<PassItem>()
+
+
     lateinit var adapterPass: AdapterPass
     lateinit var prefManager: PrefManager
 
@@ -31,6 +34,7 @@ class ActivityPassMenu : AppCompatActivity(),AdapterPass.OnClicListener{
         super.onCreate(savedInstanceState)
         binding = ActivityPassMenuBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
         passDao = (application as App).getDataBase().passDao()
         binding.toolbar.title = ""
         setSupportActionBar(binding.toolbar)
@@ -40,6 +44,12 @@ class ActivityPassMenu : AppCompatActivity(),AdapterPass.OnClicListener{
 
     }
 
+    fun addCategory(){
+        binding.BtnFabCategory.setOnClickListener(){
+            //val intent =Intent()
+        }
+    }
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
        return when(item.itemId){
             R.id.deleteList-> {
@@ -47,14 +57,19 @@ class ActivityPassMenu : AppCompatActivity(),AdapterPass.OnClicListener{
                 true
             }
            R.id.setPass -> {
+
                true
            }
            else -> true
        }
     }
 
+    private fun setPass(){
 
-    fun deliteList(){
+    }
+
+
+     private fun deliteList(){
         binding.recycler.visibility = View.GONE
         binding.LL1Delite.visibility = View.VISIBLE
         binding.delete.setOnClickListener(){

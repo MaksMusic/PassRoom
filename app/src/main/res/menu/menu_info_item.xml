@@ -5,7 +5,7 @@
     tools:context="com.music.example.pass.PassItemInfoActivity">
     <item
         android:color="@android:color/white"
-        android:id="@+id/setting"
+        android:id="@+id/setPass"
         android:title="1"
         app:showAsAction="never"/>
     <item

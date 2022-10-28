@@ -108,6 +108,22 @@
     </LinearLayout>
 
 
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/BtnFabCategory"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:backgroundTint="@color/add"
+        android:contentDescription="add shopItem"
+        android:layout_marginEnd="16dp"
+        android:layout_gravity="bottom|end"
+        android:layout_marginBottom="16dp"
+        app:srcCompat="@android:drawable/ic_input_add" />
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/BtnFab"
         app:layout_constraintBottom_toBottomOf="parent"
