@@ -63,6 +63,11 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    override fun onRestart() {
+        binding.textFieldConnect.setText("")
+        super.onRestart()
+    }
+
     fun connect(){
         binding.btnConnect.setOnClickListener(){
             if (binding.textfield.editText?.text.toString().equals(prefManager.getString("passwordReg"))){

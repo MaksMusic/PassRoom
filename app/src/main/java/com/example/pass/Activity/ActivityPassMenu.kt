@@ -57,7 +57,7 @@ class ActivityPassMenu : AppCompatActivity(),AdapterPass.OnClicListener{
                 true
             }
            R.id.setPass -> {
-
+                setPass()
                true
            }
            else -> true
@@ -65,7 +65,33 @@ class ActivityPassMenu : AppCompatActivity(),AdapterPass.OnClicListener{
     }
 
     private fun setPass(){
+        binding.recycler.visibility = View.GONE
+        binding.LL1setPass.visibility = View.VISIBLE
+        binding.btnSetPass.setOnClickListener(){
+            if (binding.editTextSetPass.text.toString() == prefManager.getString("passwordReg").toString()){
+                prefManager.putString("passwordReg",binding.EditTextNewPass.text.toString())
+                Toast.makeText(applicationContext,"Вы сменили пароль",Toast.LENGTH_LONG).show()
+                binding.recycler.visibility = View.VISIBLE
+                binding.LL1setPass.visibility = View.GONE
+                binding.editTextSetPass.setText("")
+                binding.EditTextNewPass.setText("")
+            }else{
+                Toast.makeText(applicationContext,"Не верный пароль",Toast.LENGTH_LONG).show()
+                binding.editTextSetPass.setText("")
+            }
+        }
+        binding.btnCloseSetPass.setOnClickListener(){
+            binding.recycler.visibility = View.VISIBLE
+            binding.LL1setPass.visibility = View.GONE
+            binding.editTextSetPass.setText("")
+            binding.EditTextNewPass.setText("")
+        }
 
+    }
+
+    override fun onPause() {
+        finish()
+        super.onPause()
     }
 
 
@@ -73,12 +99,12 @@ class ActivityPassMenu : AppCompatActivity(),AdapterPass.OnClicListener{
         binding.recycler.visibility = View.GONE
         binding.LL1Delite.visibility = View.VISIBLE
         binding.delete.setOnClickListener(){
-            if (binding.textFielPass.text.toString() == prefManager.getString("passwordReg").toString() ){
+            if (binding.textPass.toString() == prefManager.getString("passwordReg").toString() ){
                 lifecycleScope.launch(Dispatchers.IO){
                     passDao.clearPassItem()
                 }
                 adapterPass.clearList()
-                binding.textFielPass.setText("")
+                binding.textPass.setText("")
                 binding.recycler.visibility = View.VISIBLE
                 binding.LL1Delite.visibility = View.GONE
                 Toast.makeText(applicationContext,"Пароли удаленны",Toast.LENGTH_LONG).show()
@@ -88,7 +114,7 @@ class ActivityPassMenu : AppCompatActivity(),AdapterPass.OnClicListener{
         binding.close.setOnClickListener(){
             binding.recycler.visibility = View.VISIBLE
             binding.LL1Delite.visibility = View.GONE
-            binding.textFielPass.setText("")
+            binding.textPass.setText("")
         }
 
     }

@@ -6,6 +6,9 @@
     android:layout_height="match_parent"
     tools:context=".Activity.ActivityPassMenu">
 
+
+
+
     <androidx.appcompat.widget.Toolbar
         app:menu="@menu/menu_recycler"
         style="@style/Widget.MaterialComponents.Toolbar.Primary"
@@ -23,6 +26,120 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
     </androidx.appcompat.widget.Toolbar>
+
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/LL1setPass"
+        android:background="@color/black"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="wrap_content"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:gravity="center"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minEms="12"
+            android:text="сменить пароль"
+            android:textSize="24sp"
+            android:textColor="@color/red"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/editTextPassLayuot"
+            app:errorEnabled="true"
+            app:errorIconDrawable="@color/design_default_color_error"
+            app:endIconMode="password_toggle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            app:counterEnabled="true"
+            android:textColorHint="@color/black"
+            app:counterMaxLength="16">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextSetPass"
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                android:drawableStart="@drawable/custom_lock_ico"
+                android:inputType="textPassword"
+                android:minEms="16"
+                android:drawablePadding="12dp"
+                android:textColor="@color/black"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/castom_input_textfield_style"
+                android:hint="Текущий пароль"
+                android:textSize="18sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/EditTextNewPassLayout"
+            app:errorEnabled="true"
+            app:errorIconDrawable="@color/design_default_color_error"
+            app:endIconMode="password_toggle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            app:counterEnabled="true"
+            android:textColorHint="@color/black"
+            app:counterMaxLength="16">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/EditTextNewPass"
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                android:drawableStart="@drawable/custom_lock_ico"
+                android:inputType="textPassword"
+                android:minEms="16"
+                android:drawablePadding="12dp"
+                android:textColor="@color/black"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/castom_input_textfield_style"
+                android:hint="Новый пароль"
+                android:textSize="18sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <LinearLayout
+            android:weightSum="1"
+            android:id="@+id/LLsetPassbtn"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnCloseSetPass"
+                android:layout_weight="0.5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/black"
+                android:textColor="@color/white"
+                android:text="отмена"
+                android:layout_gravity="center"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnSetPass"
+                android:layout_weight="0.5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/black"
+                android:textColor="@color/white"
+                android:text="Сменить"
+                android:layout_gravity="center"/>
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+
 
     <LinearLayout
         android:visibility="gone"
@@ -48,7 +165,7 @@
             android:textColor="@color/red"/>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textfield"
+            android:id="@+id/textfieldse"
             app:errorEnabled="true"
             app:errorIconDrawable="@color/design_default_color_error"
             app:endIconMode="password_toggle"
@@ -60,7 +177,7 @@
             app:counterMaxLength="16">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/textFielPass"
+                android:id="@+id/textPass"
                 style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
                 android:drawableStart="@drawable/custom_lock_ico"
                 android:inputType="textPassword"
@@ -75,8 +192,8 @@
         </com.google.android.material.textfield.TextInputLayout>
 
 <LinearLayout
-    android:weightSum="1"
-    android:id="@+id/LLbtn"
+        android:weightSum="1"
+        android:id="@+id/LLbtn"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -103,8 +220,6 @@
 
 
 </LinearLayout>
-
-
     </LinearLayout>
 
 
@@ -120,7 +235,7 @@
         android:backgroundTint="@color/add"
         android:contentDescription="add shopItem"
         android:layout_marginEnd="16dp"
-        android:layout_gravity="bottom|end"
+        android:layout_gravity="bottom|start"
         android:layout_marginBottom="16dp"
         app:srcCompat="@android:drawable/ic_input_add" />
 

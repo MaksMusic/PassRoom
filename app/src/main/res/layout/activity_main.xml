@@ -17,7 +17,7 @@
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/textToolBar"
-            android:text="Pass version 2.2"
+            android:text="Pass version 2.5"
             android:textSize="24sp"
             android:textColor="@color/white"
             android:layout_width="wrap_content"
