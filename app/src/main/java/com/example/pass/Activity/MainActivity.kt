@@ -54,7 +54,7 @@ class MainActivity : AppCompatActivity() {
     fun reg(){
         binding.btnConnectReg.setOnClickListener(){
             if (binding.textfieldReg.editText?.text.toString().length <= 16 && binding.textfieldReg.editText?.text.toString() != "null") {
-                prefManager.putString("passwordReg", binding.textfieldReg.editText?.text.toString())
+                prefManager.putString(Const.PASS_KEY, binding.textfieldReg.editText?.text.toString())
                 val toast =
                     Toast.makeText(applicationContext, "Пароль установлен", Toast.LENGTH_LONG)
                 toast.show()
@@ -70,7 +70,7 @@ class MainActivity : AppCompatActivity() {
 
     fun connect(){
         binding.btnConnect.setOnClickListener(){
-            if (binding.textfield.editText?.text.toString().equals(prefManager.getString("passwordReg"))){
+            if (binding.textfield.editText?.text.toString().equals(prefManager.getString(Const.PASS_KEY))){
                 var intent = Intent(applicationContext, ActivityPassMenu::class.java)
                 startActivity(intent)
             }else{
@@ -84,7 +84,7 @@ class MainActivity : AppCompatActivity() {
     }
 
   fun  initInterface(){
-        if (prefManager.getString("passwordReg") != null){
+        if (prefManager.getString(Const.PASS_KEY) != null){
             binding.LLReg.visibility = View.GONE
             binding.LL1.visibility = View.VISIBLE
         }else{

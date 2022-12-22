@@ -1,5 +1,6 @@
 package com.example.pass.Activity
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.lifecycleScope
@@ -45,6 +46,8 @@ class ActivityAddItem : AppCompatActivity() {
                 passDao.insertPassItem(item)
                 withContext(Dispatchers.Main) {
                     finish()
+                    var intent = Intent(applicationContext,ActivityPassMenu::class.java)
+                    startActivity(intent)
                 }
 
             }

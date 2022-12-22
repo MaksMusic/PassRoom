@@ -10,7 +10,7 @@
         app:showAsAction="never"/>
     <item
         android:color="@android:color/darker_gray"
-        android:id="@+id/delete"
+        android:id="@+id/deleteItem"
         android:title="удалить пароль"
         app:showAsAction="never"/>
 </menu>

@@ -17,7 +17,7 @@
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/textToolBar"
-            android:text="Pass version 2.5"
+            android:text="Pass version 3"
             android:textSize="24sp"
             android:textColor="@color/white"
             android:layout_width="wrap_content"
@@ -84,17 +84,18 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/textFieldConnect"
             style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
-            android:drawableStart="@drawable/custom_lock_ico"
-            android:inputType="textPassword"
-            android:linksClickable="false"
-            android:longClickable="false"
-            android:drawablePadding="12dp"
-            android:textColor="@color/black"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/castom_input_textfield_style"
+            android:drawableStart="@drawable/custom_lock_ico"
+            android:drawablePadding="12dp"
             android:hint="Пароль"
-            android:textSize="18sp" />
+            android:inputType="textPassword"
+            android:linksClickable="false"
+            android:longClickable="false"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            tools:ignore="DuplicateClickableBoundsCheck" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <androidx.appcompat.widget.AppCompatButton

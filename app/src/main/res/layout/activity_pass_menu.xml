@@ -209,13 +209,13 @@
         android:layout_gravity="center"/>
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/delete"
+        android:id="@+id/deleteItems"
         android:layout_weight="0.5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@color/black"
         android:textColor="@color/white"
-        android:text="Удалить все"
+        android:text="Удалить пароли"
         android:layout_gravity="center"/>
 
 

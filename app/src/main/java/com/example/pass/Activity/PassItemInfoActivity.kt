@@ -1,5 +1,6 @@
 package com.example.pass.Activity
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
@@ -67,7 +68,7 @@ class PassItemInfoActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
        return when(item.itemId){
-           R.id.delete -> {
+           R.id.deleteItem -> {
                itemDelete()
                true
            }
@@ -96,6 +97,7 @@ class PassItemInfoActivity : AppCompatActivity() {
                         PassItem(passDao.getPassItem(id!!).id, login, name, pass, email, notes)
                     passDao.update(itemPass)
                     finish()
+                    startActivity(Intent(applicationContext,ActivityPassMenu::class.java))
                 }
             }
         }
@@ -105,6 +107,8 @@ class PassItemInfoActivity : AppCompatActivity() {
     private fun btnExit() {
         binding.btnToolBarExit.setOnClickListener() {
             finish()
+            startActivity(Intent(applicationContext,ActivityPassMenu::class.java))
+
         }
     }
 

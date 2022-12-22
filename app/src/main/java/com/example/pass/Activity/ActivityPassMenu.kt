@@ -19,6 +19,7 @@ import com.example.pass.room.model.PassItem
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import java.io.ByteArrayInputStream
 
 class ActivityPassMenu : AppCompatActivity(),AdapterPass.OnClicListener{
     lateinit var binding: ActivityPassMenuBinding
@@ -98,8 +99,9 @@ class ActivityPassMenu : AppCompatActivity(),AdapterPass.OnClicListener{
      private fun deliteList(){
         binding.recycler.visibility = View.GONE
         binding.LL1Delite.visibility = View.VISIBLE
-        binding.delete.setOnClickListener(){
-            if (binding.textPass.toString() == prefManager.getString("passwordReg").toString() ){
+        binding.deleteItems.setOnClickListener(){
+
+            if (binding.textPass.text.toString() == prefManager.getString(Const.PASS_KEY).toString() ){
                 lifecycleScope.launch(Dispatchers.IO){
                     passDao.clearPassItem()
                 }
